@@ -1,0 +1,4 @@
+scope,n,layout,median_ns_per_array,paired_time_over_forward,paired_min,paired_max,slower_count
+layer,8388608,forward,3772800.0,1.0,1.0,1.0,0
+layer,8388608,line_shuffled,14535100.0,3.7136,3.2767,5.0806,12
+layer,8388608,dyadic,6736850.0,1.7881,1.3276,2.1267,12
