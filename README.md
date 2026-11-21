@@ -1,6 +1,6 @@
 # Project S
 
-**Miaozhen Yu (俞缪臻)** · [Project board](https://github.com/users/EternalYMZ/projects/1) · [Proof ideas in Chinese](brief.md) · [Lean source index](MODULES.md)
+**Miaozhen Yu (俞缪臻)** · [Project board](https://github.com/users/EternalYMZ/projects/1) · [Proof guide](brief.md) · [Lean source index](MODULES.md)
 
 Project S studies Shellsort and ordered-partition sorting through information, intermediate array states, and the cost of legal movements and comparisons. This index links independently buildable Lean developments to the mathematical questions they address. The paper manuscripts are held for author review.
 
@@ -29,7 +29,7 @@ The revision links point to fixed snapshots. Each repository README identifies i
 
 [Engineering playground](playground/) · [Eight-pass billion-key measurements](playground/eight-pass/) · [Pair-layer cache layout](playground/layout/) · [Finite comparison certificates](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/tree/main/certificates)
 
-The paper repositories now include their reviewed Chinese proof guides. New Lean sources cover exact fiber packing (P03), ordered-block contraction and cancellation (P06), disjoint pair-layer costs (P07), and the unique winner over the full two-large-gap class for n ≥ 237 (P10). For a fixed billion-key size, the finite comparison certificates exclude every schedule with seven or fewer passes from the under-50-billion target. The playground gives per-pass counts for two completed runs of a predetermined eight-pass schedule.
+The paper repositories now include their English proof guides. New Lean sources cover exact fiber packing (P03), ordered-block contraction and cancellation (P06), disjoint pair-layer costs (P07), and the unique winner over the full two-large-gap class for n ≥ 237 (P10). For a fixed billion-key size, the finite comparison certificates exclude every schedule with seven or fewer passes from the under-50-billion target. The playground gives per-pass counts for two completed runs of a predetermined eight-pass schedule.
 
 ## Acknowledgments
 
