@@ -34,3 +34,5 @@ The paper repositories now include their reviewed Chinese proof guides. New Lean
 ## Acknowledgments
 
 The author thanks OpenAI's ChatGPT and Codex for assistance in exploring derivations, organizing proofs, checking references, and writing programs for the finite computations.
+
+[Fixed-size Shellsort and Rust ipnsort experiments](playground/rust-sorting/) include standalone kernels, paired measurements and exact comparison checks.

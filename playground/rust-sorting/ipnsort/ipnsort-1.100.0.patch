@@ -1,0 +1,105 @@
+diff --git a/library/core/src/slice/sort/unstable/mod.rs b/library/core/src/slice/sort/unstable/mod.rs
+index 7ca95a3..eb95c88 100644
+--- a/library/core/src/slice/sort/unstable/mod.rs
++++ b/library/core/src/slice/sort/unstable/mod.rs
+@@ -131,8 +131,100 @@ where
+         return;
+     }
+ 
++    let v = if len >= 256 && !was_reversed && run_len >= len / 8 {
++        let (lo, hi) = narrow(v, run_len, is_less);
++        if hi - lo < 2 {
++            return;
++        }
++        &mut v[lo..hi]
++    } else {
++        v
++    };
++    let len = v.len();
++
+     // Limit the number of imbalanced partitions to `2 * floor(log2(len))`.
+     // The binary OR by one is used to eliminate the zero-check in the logarithm.
+     let limit = 2 * (len | 1).ilog2();
+     crate::slice::sort::unstable::quicksort::quicksort(v, None, limit, is_less);
+ }
++
++#[cfg(not(any(feature = "optimize_for_size", target_pointer_width = "16")))]
++// Called once, after ipnsort has certified an ascending prefix 0..run.
++// Return the only interval that still needs sorting. All indices below are
++// structural, so a stateful or inconsistent comparator cannot break bounds.
++#[inline(never)]
++fn narrow<T, F: FnMut(&T, &T) -> bool>(
++    v: &mut [T],
++    run: usize,
++    less: &mut F,
++) -> (usize, usize) {
++    let n = v.len();
++    let crossed_ends = !less(&v[0], &v[n - 1]);
++    // If the two ranges appear to interleave almost completely, a boundary
++    // search is unlikely to save enough sorting. Rejecting never mutates v.
++    if !crossed_ends
++        && less(&v[run], &v[run / 4])
++        && less(&v[n - 1 - (n - run) / 4], &v[run - 1])
++    {
++        return (0, n);
++    }
++    let mut suffix = n - 1;
++    if run < n / 2 {
++        // A shorter prefix only qualifies if the unordered middle fits the
++        // budget. Check from that boundary forward to fail early on a wide
++        // shuffled middle. Check the final edge first for a broken tail.
++        let latest = run + n / 16;
++        if less(&v[n - 1], &v[n - 2])
++            || !v[latest..n - 1].is_sorted_by(|a, b| !less(b, a))
++        {
++            return (0, n);
++        }
++        suffix = latest;
++    }
++    while suffix > run && !less(&v[suffix], &v[suffix - 1]) {
++        suffix -= 1;
++    }
++
++    // Only pay for finding extrema when the uncertified middle is small.
++    if suffix - run > n / 16 {
++        // A long sorted prefix followed by an unsorted tail may still have a
++        // large settled part. Abandon the search on the first counterexample.
++        let fence = &v[run / 2];
++        let mut low = suffix;
++        if less(&v[low], fence) {
++            return (0, n);
++        }
++        for i in run..suffix {
++            if less(&v[i], &v[low]) {
++                if less(&v[i], fence) {
++                    return (0, n);
++                }
++                low = i;
++            }
++        }
++        let start = v[..run].partition_point(|x| !less(&v[low], x));
++        return (start, n);
++    }
++
++    // The whole array is a rotation of two non-overlapping sorted ranges.
++    if suffix == run && crossed_ends {
++        v.rotate_left(run);
++        return (0, 0);
++    }
++
++    // low is the minimum outside the prefix, high the maximum outside the
++    // suffix. The two sorted ends each contribute just one endpoint.
++    let mut low = suffix;
++    let mut high = run - 1;
++    for i in run..suffix {
++        if less(&v[i], &v[low]) {
++            low = i;
++        }
++        if less(&v[high], &v[i]) {
++            high = i;
++        }
++    }
++    let start = v[..run].partition_point(|x| !less(&v[low], x));
++    let end = suffix + v[suffix..].partition_point(|x| less(x, &v[high]));
++    (start, end)
++}
