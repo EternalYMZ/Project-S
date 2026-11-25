@@ -8,6 +8,8 @@ Miaozhen Yu（俞缪臻）
 
 **P00/P01。** 对 $n\ge16$，取 $q=\lfloor n^{1/4}\rfloor$。同一张预定表 $(q^2+1,q,1)$ 的平均成功右移至多 $2n\sqrt n$，平均键比较至多 $(5/2)n\sqrt n$。这两项实际成本上界及各自最优值的上界均有 Lean 定理。两个分别最小化的均值之差介于 0 与 $3n$。三趟稿还给出对全部合法表统一的下界 $n\sqrt n/64$，并证明一个确定性间隔族达到 $O(n^{3/2})$ 当且仅当 $h=\Theta(\sqrt n)$、$g=\Theta(n^{1/4})$、$\gcd(h,g)=O(1)$。完整充要分类和新下界常数见解析稿。归一化最优成本的上下极限分别受 $2^{-15/4}3^{-5/4}$ 与 $3\pi^{1/3}/4$ 约束，精确领先常数仍待确定。[P01 定理和验证入口](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/tree/0c661e97bb762019437ad338cb2a3fa4bf9c1c57)
 
+**P01 后续形式化。** 对实际三趟均值，新增声明给出互素族达到最优阶的双向间隔尺度判据、临界首趟系数和两种渐近近优性的转移。对任意固定正整数公因数，Lean 还能实现任意正的归一化间隔组合，并证明变分问题固定形状的精确消元。十个新根经 Nanoda 重放 46,615 个传递声明。真实第二、三趟的临界极限以及从实际成本识别全域常数仍由纸面论证承担。上段的首项表述对应原始来件。[源码与重放入口](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/tree/092324ff2ac0990de0d5df025594c328c40789e3)
+
 **P04。** 一个块先作 $g_1,g_2$ 两趟，再从有限菜单 $G$ 选第三间隔。修订稿对每个入口排列给出平均平方位移的估计，条件包括 $|G|\ge c/M$、$\max G\le Hc$、$g_1\le Rc$ 以及每个菜单间隔与两个固定间隔的三重 gcd 为 1。具体校准给出 $Q/200+2^{24}cF$ 的局部上界和 $4{,}143{,}972{,}353\,n\log_2 n$ 的均匀平均见证，表长至多 $\lfloor\log_2n\rfloor$。任意规模端到端 Lean 定理的上界系数为 $1+2^{165}$；对所有种子中心 $c\le49{,}932$、任意数组长度和入口排列，Lean 已证明实际三趟末端满足 $\mathbb E_h Q_{\rm out}\le 2^{24}cF_{\rm in}$。其余菜单、块成本及分布结论逐项列于 P04 核验入口。[P04 定理和验证入口](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/tree/776455d3d5e381fd92086cf5659f96674eaf5d4a)
 
 | 输入或表的选择方式 | 修订稿的解析结论 |
