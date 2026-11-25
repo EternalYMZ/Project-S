@@ -2,7 +2,7 @@
 
 Each link identifies the published source at a fixed paper-repository revision.
 
-The complete three-pass proof starts at [F09Verified](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/blob/59213850d62ca725acdbf2a66a875d03c715ac56/Shellsort/F09Verified.lean). Its imports cover the finite order criterion, fixed-divisor limits, the numerical certificate and the optimal families. The [finite-center and submenu bounds](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/blob/d439356fd87e130d86b879a68360d14acdbcbc30/Shellsort/ConsecutiveMenuEnergy.lean) belong to P04.
+The complete three-pass proof starts at [F09Verified](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/blob/59213850d62ca725acdbf2a66a875d03c715ac56/Shellsort/F09Verified.lean). Its imports cover the finite order criterion, fixed-divisor limits, the numerical certificate and the optimal families. The [noncoprime penalty](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/blob/1c5684b8178e450cc36c84c619b872216890c5d0/Shellsort/F09NoncoprimeCost.lean) applies the bounds to both finite-size optima and every exact minimizing table. The [finite-center and submenu bounds](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/blob/d439356fd87e130d86b879a68360d14acdbcbc30/Shellsort/ConsecutiveMenuEnergy.lean) belong to P04.
 
 | Module | Repositories |
 |---|---|
