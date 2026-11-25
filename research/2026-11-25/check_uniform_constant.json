@@ -1,0 +1,25 @@
+{
+  "all_checks_passed": true,
+  "arithmetic": "exact integer and Fraction",
+  "lambda_log2": 49,
+  "N0_log2": 4096,
+  "upper_log2_exponents": {
+    "small_row_mode_term": "-2375/28",
+    "small_row_start_term": "-3033/14",
+    "ideal_term": "-2875/6",
+    "large_row_near_term": "-2653/6",
+    "large_row_far_term": "-3043/6"
+  },
+  "lower_log2_exponents": {
+    "h_over_g": "3067/6",
+    "p_over_2304Ln_using_2304_lt_2pow12": "2791/6",
+    "band_over_32pi_using_102400_lt_2pow17": "3943/28"
+  },
+  "large_weighted_constant_negative_log2_bound": "197/7",
+  "finite_n_constant_negative_log2_bound": "32810/21",
+  "chosen_uniform_constant_negative_log2": 2048,
+  "log_majorant_integer_checks": {
+    "2pow32_ge_4100": true,
+    "2pow32_ge_256": true
+  }
+}
