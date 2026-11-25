@@ -6,17 +6,19 @@ Miaozhen Yu（俞缪臻）
 
 ## 三趟与任意趟的修订稿
 
-**P00/P01。** 对 $n\ge16$，取 $q=\lfloor n^{1/4}\rfloor$。同一张预定表 $(q^2+1,q,1)$ 的平均成功右移至多 $2n\sqrt n$，平均键比较至多 $(5/2)n\sqrt n$。这两项实际成本上界及各自最优值的上界均有 Lean 定理。两个分别最小化的均值之差介于 0 与 $3n$。三趟稿还给出对全部合法表统一的下界 $n\sqrt n/64$，并证明一个确定性间隔族达到 $O(n^{3/2})$ 当且仅当 $h=\Theta(\sqrt n)$、$g=\Theta(n^{1/4})$、$\gcd(h,g)=O(1)$。完整充要分类和新下界常数见解析稿。归一化最优成本的上下极限分别受 $2^{-15/4}3^{-5/4}$ 与 $3\pi^{1/3}/4$ 约束，精确领先常数仍待确定。[P01 定理和验证入口](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/tree/0c661e97bb762019437ad338cb2a3fa4bf9c1c57)
+**P01 三趟最优首项。** 对均匀随机排列和事前确定的合法表 $(h,g,1)$，分别最小化普通线性插入的成功右移与实际键比较，两项最优均值都是 $(\kappa+o(1))n^{3/2}$。Lean 从真实执行证明 $0.60822153\le\kappa<0.60827485406$。达到最优阶的充要条件是 $h=\Theta(\sqrt n)$、$g=\Theta(n^{1/4})$、$\gcd(h,g)=O(1)$。有限规模 $n\ge16$ 的统一下界系数在论文中是 $1/64$，在 Lean 中是 $1/65536$。同一显式表给出两项上界系数 $2,5/2$。[定理与核验](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/tree/59213850d62ca725acdbf2a66a875d03c715ac56)
 
-**P01 后续形式化。** 对实际三趟均值，新增声明给出互素族达到最优阶的双向间隔尺度判据、临界首趟系数和两种渐近近优性的转移。对任意固定正整数公因数，Lean 还能实现任意正的归一化间隔组合，并证明变分问题固定形状的精确消元。十个新根经 Nanoda 重放 46,615 个传递声明。真实第二、三趟的临界极限以及从实际成本识别全域常数仍由纸面论证承担。上段的首项表述对应原始来件。[源码与重放入口](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/tree/092324ff2ac0990de0d5df025594c328c40789e3)
+固定正公因数 $d$，若 $(h/\sqrt n,g/n^{1/4})\to(a,b)>0$（逐坐标），两种成本除以 $n^{3/2}$ 都趋于显式 $K_d(a,b)$。对 $d\ge2$，所有正参数均有 $K_d(a,b)\ge0.61546$。一个间隔族达到最优首项，当且仅当它最终互素，且归一化坐标到全部最优形状组成的紧集的距离趋于零。机器证明包含积分的 13 个有向数值界。[最终定理](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/blob/59213850d62ca725acdbf2a66a875d03c715ac56/Shellsort/F09Verified.lean) · [积分证书](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/blob/59213850d62ca725acdbf2a66a875d03c715ac56/Shellsort/F09CertificateKnots.lean)
 
-**P04。** 一个块先作 $g_1,g_2$ 两趟，再从有限菜单 $G$ 选第三间隔。修订稿对每个入口排列给出平均平方位移的估计，条件包括 $|G|\ge c/M$、$\max G\le Hc$、$g_1\le Rc$ 以及每个菜单间隔与两个固定间隔的三重 gcd 为 1。具体校准给出 $Q/200+2^{24}cF$ 的局部上界和 $4{,}143{,}972{,}353\,n\log_2 n$ 的均匀平均见证，表长至多 $\lfloor\log_2n\rfloor$。任意规模端到端 Lean 定理的上界系数为 $1+2^{165}$；对所有种子中心 $c\le49{,}932$、任意数组长度和入口排列，Lean 已证明实际三趟末端满足 $\mathbb E_h Q_{\rm out}\le 2^{24}cF_{\rm in}$。其余菜单、块成本及分布结论逐项列于 P04 核验入口。[P04 定理和验证入口](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/tree/776455d3d5e381fd92086cf5659f96674eaf5d4a)
+**P04。** 一个块先作 $g_1,g_2$ 两趟，再从有限菜单 $G$ 选第三间隔。修订稿对每个入口排列给出平均平方位移的估计，条件包括 $|G|\ge c/M$、$\max G\le Hc$、$g_1\le Rc$ 以及每个菜单间隔与两个固定间隔的三重 gcd 为 1。具体校准给出 $Q/200+2^{24}cF$ 的局部上界和 $4{,}143{,}972{,}353\,n\log_2 n$ 的均匀平均见证，表长至多 $\lfloor\log_2n\rfloor$。任意规模端到端 Lean 定理的上界系数为 $1+2^{165}$；对所有种子中心 $c\le49{,}932$、任意数组长度和入口排列，Lean 已证明实际三趟末端满足 $\mathbb E_h Q_{\rm out}\le 2^{24}cF_{\rm in}$。对于上述有限中心，在菜单中任意保留至少比例 $\eta>0$ 的间隔后，其均值上界至多扩大到 $2^{24}cF_{\rm in}/\eta$。[P04 定理和验证入口](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/tree/d439356fd87e130d86b879a68360d14acdbcbc30)
 
 | 输入或表的选择方式 | 修订稿的解析结论 |
 |---|---|
 | 固定一个输入，再对整张随机表取平均 | 对每个输入，期望比较至多 $2^{32}n\log_2 n$。每个实现的表对所有输入排序正确。 |
 | 先给定输入分布 $\rho$ | 存在可依赖 $n,\rho$ 的短确定表，其 $\rho$ 平均不超过同一上界。 |
 | 为均匀输入预处理，给定 $0<\delta<1$ | 独立生成候选表、独立抽排列评分并截断拒绝采样，以至少 $1-\delta$ 的概率选出均值至多 $2^{34}n\log_2 n$ 的表。运行时间为 $n,\log(1/\delta)$ 的多项式。 |
+
+三重公因数条件有直接的阻碍例。在 $n=2m$ 时令 $x_{2j}=m+j,\ x_{2j+1}=j$，两条奇偶子列各自递增。间隔 $6,4,2$ 都保持这个排列，而 $Q/F=(2m+1)/3$ 随 $m$ 增长。固定 $c=1$、取 $\varepsilon<1$ 后，这个菜单不可能对所有规模满足 $Q_{\rm out}\le\varepsilon Q+BcF$。
 
 单个块的精确采样平均少于五次区间候选抽取。生成一张随机表的期望成本在 $O(\log n)$ 位整数的单位算术模型下为 $O(\log n)$ 次操作，用公平随机比特时为 $O((\log n)^2)$ 个比特。高概率筛选另计测试成本。固定表最优平均阶与 Du–Wan 的同期工作重叠，谱菜单与其收缩证明采用不同机制。11 月 23 日对照时，逐输入随机结论还只是项目候选；以上量词与常数取自 11 月 25 日稿。P09 在线整数递推与 P04 短表存在定理的接合仍待证明。
 

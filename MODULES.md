@@ -2,6 +2,8 @@
 
 Each link identifies the published source at a fixed paper-repository revision.
 
+The complete three-pass proof starts at [F09Verified](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/blob/59213850d62ca725acdbf2a66a875d03c715ac56/Shellsort/F09Verified.lean). Its imports cover the finite order criterion, fixed-divisor limits, the numerical certificate and the optimal families. The [finite-center and submenu bounds](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/blob/d439356fd87e130d86b879a68360d14acdbcbc30/Shellsort/ConsecutiveMenuEnergy.lean) belong to P04.
+
 | Module | Repositories |
 |---|---|
 | Actual214Arithmetic | [P01](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/blob/d2e146f81dc50e87b062088ebf3d514c4ece7040/Shellsort/Actual214Arithmetic.lean), [P04](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/blob/7041c672477840b81d4b407fde22f86d694d53fe/Shellsort/Actual214Arithmetic.lean), [P09](https://github.com/EternalYMZ/Shellsort-gap-table-generation/blob/77f46fb71b224bce1368a238f23c9f28ed2983ae/Shellsort/Actual214Arithmetic.lean), [P10](https://github.com/EternalYMZ/Two-large-gaps-in-Shellsort/blob/4447d6c738cee73163140cac34f0734b872ad613/Shellsort/Actual214Arithmetic.lean), [P11](https://github.com/EternalYMZ/Rank-windows-in-Shellsort/blob/2eaf4b96e66fff07d98f53ccabafbfac59991743/Shellsort/Actual214Arithmetic.lean) |
