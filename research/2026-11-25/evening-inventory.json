@@ -1,0 +1,107 @@
+{
+  "volumes": [
+    [
+      "Project-S_20261125_01_Main.zip",
+      46827314,
+      "58dc8bdbc7828219864bd232ba9f1b04df77ca903de1299b50ab78e0caa2139a",
+      170
+    ],
+    [
+      "Project-S_20261125_02_Data.zip",
+      62915305,
+      "249c923f4a5cad8529711bed29423011ca2423836d34c85c112cb3c68988f1e2",
+      2
+    ],
+    [
+      "Project-S_20261125_03_Data.zip",
+      62915306,
+      "f6dd25a3f04adb465073c2dba52dc282ed043a811bfbf6b759151956c2b206d8",
+      2
+    ],
+    [
+      "Project-S_20261125_04_Data.zip",
+      55313580,
+      "d9c48833cb62903b2ad26ffb73cb241177fe49e8e06fc805f2e9d922318c051a",
+      2
+    ]
+  ],
+  "originals": [
+    [
+      "01_Baseline/Project-S_All_Results_20261125.zip",
+      39162205,
+      "fc0c381c441cef79f94f3fa16863f5f0c2b3cc42a77fe771e31e2019dfbaaca7",
+      902
+    ],
+    [
+      "01_Baseline/Project-S_All_Results_Index_20261125.txt",
+      7245,
+      "4c954faa25477855ae6420759f0eaca7387ea882c1dd51541684a9efa62354b2",
+      0
+    ],
+    [
+      "03_P09/01_True_Prefix/Project-S_P09_True_Prefix_Regions_20261125.zip",
+      3058553,
+      "5aeb98cdde45b1b3b8a32846b320c4970dd649cc6e6719814b4274aea6ff42a6",
+      52
+    ],
+    [
+      "03_P09/02_F09_Variational/Project-S_P09_F09-Variational_20261125.zip",
+      1951097,
+      "c5a70cedf73ebe398540ace6d334df5f218f18431088b5883d40f491896e8cf1",
+      30
+    ],
+    [
+      "03_P09/03_Fourth_Pass/Project-S_P09_Fourth-Pass_Full-Cost_20261125.zip",
+      20696415,
+      "2ff73034035c7b70aac01cf76756431624d6f9c339a52b7fcd078de5c02168ea",
+      62
+    ],
+    [
+      "02_P02_P03/Project-S_P02-P03_Joint_Research_20261125.zip",
+      436141,
+      "08500fdcac134511a179d904d9210530e6146c9e3de91e1b1a68c2cd7d055f7e",
+      20
+    ],
+    [
+      "03_P09/04_Shared_Source/Project-S_P09_Shared-Source_Joint-Certificates_20261125.zip",
+      41516707,
+      "cd0388baf6360fdd34cc6f421b90c965ef059b1e479726750a435d8f80ac08be",
+      63
+    ],
+    [
+      "03_P09/05_Refined_Marginals/Project-S_P09_Refined-Marginals_Variational-Certificates_20261125.zip",
+      181141955,
+      "e0a5e204ebeba31127c5832a00352d65c50b96ab72a04e4818d32e05f34192be",
+      62
+    ],
+    [
+      "03_P09/06_Grid_Complexity/Project-S_P09_Grid-Complexity_Universal-Theory_20261125.zip",
+      190591,
+      "8b6316a68fd666d7b0d6e563c5556b9b6cd25963b85fc0ff55d6c3771a0429ee",
+      43
+    ],
+    [
+      "03_P09/07_Occupancy_Moments/Project-S_P09_Occupancy-Moments_Residual-Certificates_20261125.zip",
+      115429,
+      "2956fbbd0ccb2ce0098d7a9b51f6e89826fca95f8d38930ef5c2e102897652c6",
+      30
+    ]
+  ],
+  "copies": {
+    "QUICK_READ_SOURCES.tsv": 8,
+    "00_Research_Readable/SOURCES.tsv": 149
+  },
+  "inner_signed_entries": {
+    "Project-S_All_Results_20261125.zip": 901,
+    "Project-S_P09_True_Prefix_Regions_20261125.zip": 51,
+    "Project-S_P09_F09-Variational_20261125.zip": 29,
+    "Project-S_P09_Fourth-Pass_Full-Cost_20261125.zip": 61,
+    "Project-S_P02-P03_Joint_Research_20261125.zip": 19,
+    "Project-S_P09_Shared-Source_Joint-Certificates_20261125.zip": 62,
+    "Project-S_P09_Refined-Marginals_Variational-Certificates_20261125.zip": 61,
+    "Project-S_P09_Grid-Complexity_Universal-Theory_20261125.zip": 42,
+    "Project-S_P09_Occupancy-Moments_Residual-Certificates_20261125.zip": 29
+  },
+  "distinct_embedded_zip_or_npz": 54,
+  "embedded_members_after_deduplication": 978
+}
