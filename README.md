@@ -6,6 +6,8 @@ Project S studies Shellsort and ordered-partition sorting through information, i
 
 The [November 25 research update](research/2026-11-25/README.md) traces the new three-pass constants, four-pass lower bounds, random-table guarantees and billion-key certificates to their proofs, Lean statements and replay programs.
 
+The [November 26 proof update](research/2026-11-26/README.md) identifies the best noncoprime three-pass divisor, gives the exact cost of a scale error, and links weighted-menu contraction and shared-sample validation for many-pass tables.
+
 The [evening intake](research/2026-11-25/evening-intake.md) integrates the rank-bucket approximation and its counterexamples, the fixed-table fourth-pass certificates, and the occupancy and record-moment results.
 
 ## Formal releases
