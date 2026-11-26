@@ -8,6 +8,8 @@ The [November 25 research update](research/2026-11-25/README.md) traces the new 
 
 The [November 26 proof update](research/2026-11-26/README.md) identifies the best noncoprime three-pass divisor, gives the exact cost of a scale error, and links weighted-menu contraction and shared-sample validation for many-pass tables.
 
+The [periodic gap classification](research/2026-11-26/periodic-catalogues.md) determines the optimal mean comparison order under every eventually periodic nonfinal gap restriction and gives one schedule for adjustable rank accuracy in the primitive case. The three-pass analysis now has an additive remainder of order $n^{11/8}$.
+
 The [evening intake](research/2026-11-25/evening-intake.md) integrates the rank-bucket approximation and its counterexamples, the fixed-table fourth-pass certificates, and the occupancy and record-moment results.
 
 ## Formal releases
