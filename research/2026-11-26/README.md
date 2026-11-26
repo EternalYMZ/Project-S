@@ -2,6 +2,8 @@
 
 2026 年 11 月 26 日。Miaozhen Yu（俞缪臻）。以下模型均在互异键上执行普通链内线性插入。
 
+后续修订确定了奇偶和整除链目录的最优系数与必选间隔，并将三趟最优成本的加性误差收紧到 $O(n^{5/4})$。[定理条件与当前证明版本](periodic-catalogues.md)
+
 ## P01
 
 在均匀随机排列上分别最小化三趟的平均移动数和平均比较数。充分大的每个规模都有一张公因数 2 的表，在两项均值上同时严格胜过每一张公因数至少 3 的表。因此，限制前两间隔非互素时，两项指标的每个精确最优表最终都取公因数 2。Lean 证明公因数 2 的一个试点低于 0.6431、所有更大公因数的临界系数至少为 0.646，并把分离转回真实整数表。解析证书把试点上界收紧到 0.63837。[Lean 声明](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/blob/62fb543048a26583db1d69810fae3ddc77469298/Shellsort/F09DivisorTwo.lean) · [标量证书与重放](https://github.com/EternalYMZ/Optimal-mean-costs-of-three-pass-Shellsort/blob/62fb543048a26583db1d69810fae3ddc77469298/audit/divisor-two/README.md)
