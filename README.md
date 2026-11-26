@@ -4,6 +4,8 @@
 
 Project S studies Shellsort and ordered-partition sorting through information, intermediate array states, and the cost of legal movements and comparisons. This index links independently buildable Lean developments to the mathematical questions they address. The paper manuscripts are held for author review.
 
+The second Janson–Knuth conjecture now holds at every input size for $g=3$, and at every input size and every coprime second gap $g\ge2$ whenever $h\ge2^{21}$. The signed error has a universal leading coefficient when $h,g$ grow and $n/(hg^2)\to\infty$. [Theorems, open cases and verified code](research/2026-11-26/signed-deficit.md)
+
 The integrated three-pass results prove Janson and Knuth's first error conjecture and determine the sign and scale of the error on all coprime critical windows. Optimizing the three-pass scheme within two parity classes gives a four-pass coefficient below $0.5867796$. The proof release identifies the checked finite coupling and the analytical mixing step. [Research summary and replay points](research/2026-11-26/janson-knuth.md)
 
 The [November 25 research update](research/2026-11-25/README.md) traces the new three-pass constants, four-pass lower bounds, random-table guarantees and billion-key certificates to their proofs, Lean statements and replay programs.
